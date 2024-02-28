@@ -1,0 +1,30 @@
+.box{
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: rgb(72, 58, 85) 0px 1px 4px;
+    padding: 10px;
+    margin: 50px;
+    /* background-color: blue; */
+    
+}
+p{
+    font-size: 20px;
+    text-align: center;
+}
+button{
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    left: 150px;
+    border-radius: 0px;
+    box-shadow: rgb(59, 85, 58) 0px 1px 4px;
+}
+.add{
+    background-color: aqua;
+    color: black;
+}
+.sub{
+    background-color: red;
+    color: white;
+}
