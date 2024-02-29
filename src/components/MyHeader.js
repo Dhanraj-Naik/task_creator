@@ -1,5 +1,5 @@
 import MyImg from '../assets/logo.png'
-
+import './myHeader.css'
 const MyHeader = () => {
   return (
     <header>

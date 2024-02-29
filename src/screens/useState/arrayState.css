@@ -31,3 +31,13 @@ ul>li {
     box-shadow: rgb(237, 17, 17) 1px, 0px 0px;
     background-color: red;
 }
+
+.success{
+    background-color: green;
+}
+.warning{
+    background-color: yellow;
+}
+.error{
+    background-color: red;
+}
