@@ -1,0 +1,21 @@
+.arrayCount {
+    /* background-color: red; */
+}
+ul > li{
+    padding: 10px 0px;
+    box-shadow: rgb(113, 237, 113) 1px, 0px 0px;
+    border: 1px;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 10px;
+    /* background-color: bisque; */
+    
+}
+.deleteTask{
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: 0px;
+    margin: 0px;
+    padding: 4px;
+}
