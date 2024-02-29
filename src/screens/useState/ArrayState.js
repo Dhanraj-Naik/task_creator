@@ -4,6 +4,7 @@ import MyHeader from '../../components/MyHeader';
 import PersonList from '../../components/PersonList';
 import BoxContainer from '../../components/BoxContainer';
 import { Footer } from '../../components/Footer';
+import AddTaskForm from '../../components/AddTaskForm';
 
 const ArrayState = () => {
     const [tasks, setTask] = useState([{ id: 1, name: 'Dhanraj', married: true }, { id: 2, name: 'Vipul', married: false }, { id: 3, name: 'Yogesh', married: true }]);
@@ -28,6 +29,7 @@ const ArrayState = () => {
             <MyHeader />
             <div className="App">
                 <button style={myStyle} className="toggle" onClick={toggleHnndler}>TOGGLE</button>
+                <AddTaskForm />
                 <PersonList
                     tasks={tasks}
                     show={show}
