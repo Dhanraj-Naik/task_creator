@@ -7,7 +7,7 @@ const ProductList = () => {
     const [counter, setCounter] = useState(0);
     // const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:8000/products")
-    const { data: products, loading } = useFetch(url)
+    const { data: products, loading, error } = useFetch(url)
     // console.log("NORMAL", products)
 
     // useEffect(() => {
@@ -54,7 +54,7 @@ const ProductList = () => {
                     setCounter(counter + 1)
                 }}>ALL</span>
                 <span className='inStock' onClick={() => {
-                    setUrl("http://localhost:8000/products?in_stock=true")
+                    setUrl("http://localhost:8000/productsa?in_stock=true")
                     setCounter(counter + 1)
                 }
                 }>IN STOCK</span>
@@ -64,6 +64,7 @@ const ProductList = () => {
                 {products && products.map(product => (
                     <Product key={product.id} product={product} />
                 ))}
+                {error && <h1>ERROR : {error}</h1>}
             </div>
         </section>
     )

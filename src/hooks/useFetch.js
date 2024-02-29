@@ -2,21 +2,35 @@ import { useState, useCallback, useEffect } from 'react'
 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
-            setLoading(true)
-            const response = await fetch(url);
-            const result = await response.json();
-            setLoading(false)
-            setData(result)
+            try {
+
+                setLoading(true)
+                const response = await fetch(url);
+                console.log(response);
+                if (!response.ok) { //to handle errors from our side
+                    throw new Error(response.statusText) //this move us with error in our Catch Block
+                }
+                const result = await response.json();
+                setLoading(false)
+                setData(result)
+                setError("")
+            } catch (error) { //to handle server errors
+                console.log(error)
+                setLoading(false)
+                setError(error.message)
+                setData("")
+            }
         }
 
         fetchData()
     }, [url]);
 
-    return { data, loading }
+    return { data, loading, error }
 }
 
 export default useFetch
