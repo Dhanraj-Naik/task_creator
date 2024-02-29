@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
-const useFetch = (url, _body) => {//for only array or object use useRef. for function if passed, 
+const useFetch = (url, _body) => {//[DEPENDENCY]for only array or object use useRef. for function if passed, 
     //use useCallback to avoid multiple re-render or add function in useffect only
 
     const [data, setData] = useState(null);
