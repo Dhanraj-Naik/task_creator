@@ -1,9 +1,12 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 
-const useFetch = (url) => {
+const useFetch = (url, _body) => {//for only array or object use useRef. for function if passed, 
+    //use useCallback to avoid multiple re-render or add function in useffect only
+
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false)
+    const body = useRef(_body)
 
     const controller = new AbortController()
 
@@ -36,8 +39,8 @@ const useFetch = (url) => {
         return () => {
             controller.abort()
         }
-    }, [url]);
-
+    }, [url, body]);
+    console.log(body)
     return { data, loading, error }
 }
 

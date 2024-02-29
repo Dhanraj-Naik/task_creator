@@ -7,7 +7,7 @@ const ProductList = () => {
     const [counter, setCounter] = useState(0);
     // const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:8000/products")
-    const { data: products, loading, error } = useFetch(url)
+    const { data: products, loading, error } = useFetch(url,  {body: 'success'})
     // console.log("NORMAL", products)
 
     // useEffect(() => {
