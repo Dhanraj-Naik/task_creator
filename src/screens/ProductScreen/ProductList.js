@@ -7,7 +7,7 @@ const ProductList = () => {
     const [counter, setCounter] = useState(0);
     // const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:8000/products")
-    const { data: products } = useFetch(url)
+    const { data: products, loading } = useFetch(url)
     // console.log("NORMAL", products)
 
     // useEffect(() => {
@@ -60,6 +60,7 @@ const ProductList = () => {
                 }>IN STOCK</span>
             </p>
             <div>
+                {loading && <h1>Loading...</h1>}
                 {products && products.map(product => (
                     <Product key={product.id} product={product} />
                 ))}
