@@ -4,6 +4,7 @@ import { App } from './App';
 import './index.css'
 import CounterApp from './screens/useState/CounterApp';
 import ArrayState from './screens/useState/ArrayState';
+import ProductApp from './screens/ProductScreen/ProductApp';
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
@@ -12,7 +13,8 @@ root.render(
         <>
             {/* <App /> */}
             {/* <CounterApp /> */}
-            <ArrayState />
+            {/* <ArrayState /> */}
+            <ProductApp />
         </>
 
     </React.StrictMode>
