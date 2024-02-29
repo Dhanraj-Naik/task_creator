@@ -1,14 +1,13 @@
 import React from 'react'
+import Person from './Person';
 
 const PersonList = ({ tasks, show, deleteTask }) => {
     if (tasks == null) return null;
     return (
         <ul>
-            {show && tasks.map(task => (
-                (<li key={task.id} className={task.married ? 'married' : 'unmarried'}>
-                    <span>{task.id} : {task.name}</span>
-                    <button className='deleteTask' onClick={() => deleteTask(task.id)}>Delete</button>
-                </li>)
+            {show && tasks.map(task =>
+            (
+                <Person key={task.id} task={task} deleteTask={deleteTask} />
             ))}
         </ul>
     )
