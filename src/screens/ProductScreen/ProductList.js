@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Product from '../../components/Product'
 import './productList.css'
+import useFetch from '../../hooks/useFetch';
 
 const ProductList = () => {
     const [counter, setCounter] = useState(0);
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:8000/products")
-    console.log("NORMAL", products)
+    const { data: products } = useFetch(url)
+    // console.log("NORMAL", products)
 
     // useEffect(() => {
     //     fetch(url)
@@ -19,17 +21,21 @@ const ProductList = () => {
     // }, [url]);
 
 
+    /**
+     * when function is outside, use useCallback to avoid unnecessary call
+     * otherwise if we use api call in useEffect itself, then its not needed. 
+     * but usually we keep useEffect clean
+     */
+    // const productFetch = useCallback(async () => {
+    //     const API = await fetch(url);
+    //     const response = await API.json();
+    //     setProducts(response)
+    // }, [url])
 
-    const productFetch = useCallback(async () => {
-        const API = await fetch(url);
-        const response = await API.json();
-        setProducts(response)
-    }, [url])
 
-
-    useEffect(() => {
-        productFetch()
-    }, [productFetch]);
+    // useEffect(() => {
+    //     productFetch()
+    // }, [productFetch]);
 
     // useEffect(() => {
     //     console.log("counter : ", counter)
@@ -54,7 +60,7 @@ const ProductList = () => {
                 }>IN STOCK</span>
             </p>
             <div>
-                {products.map(product => (
+                {products && products.map(product => (
                     <Product key={product.id} product={product} />
                 ))}
             </div>

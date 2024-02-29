@@ -6,7 +6,7 @@ const Product = ({ product }) => {
             <p> {product.id}</p>
             <p>Product {product.name}</p>
             <p>${product.price}</p>
-            <p>INSTOCK {product.in_stock}</p>
+            <p style={{ color : product.in_stock ? "green" : "red"}}>{product.in_stock ? "INSTOCK" : "OUT OF STOCK"}</p>
 
         </div>
     )
