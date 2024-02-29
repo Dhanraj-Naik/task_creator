@@ -1,0 +1,19 @@
+section div {
+    border: 2px solid blue;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.all {
+    border: 1px solid green;
+    margin-right: 10px;
+}
+
+.inStock {
+    border: 1px solid rgb(0, 2, 128);
+}
+.counter{
+    background-color: brown;
+    color: white;
+}
