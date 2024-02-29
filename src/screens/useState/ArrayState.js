@@ -8,7 +8,11 @@ import { Footer } from '../../components/Footer';
 const ArrayState = () => {
     const [tasks, setTask] = useState([{ id: 1, name: 'Dhanraj', married: true }, { id: 2, name: 'Vipul', married: false }, { id: 3, name: 'Yogesh', married: true }]);
     const [show, setShow] = useState(false);
-    const myStyle = { color: 'white', padding: '5px 10px'};
+    const myStyle = {
+        color: 'white',
+        padding: '5px 10px',
+        backgroundColor: show ? "red" : "green"
+    };
 
     function deleteTask(id) {
         console.log('deleteTask: ', id)
