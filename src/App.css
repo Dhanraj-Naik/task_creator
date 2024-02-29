@@ -1,7 +1,8 @@
 .App {
     width: 400px;
     border-radius: 5px;
-    box-shadow: rgb(72, 58, 85) 0px 1px 4px;
+    /* box-shadow: rgb(72, 58, 85) 0px 1px 4px; */
+    box-shadow: var(--theme-border) 0px 1px 4px;
     padding: 10px;
     margin: 50px;
 }
