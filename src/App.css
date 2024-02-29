@@ -1,8 +1,18 @@
 .App {
-    width: 400px;
+    width: 90%;
     border-radius: 5px;
     /* box-shadow: rgb(72, 58, 85) 0px 1px 4px; */
     box-shadow: var(--theme-border) 0px 1px 4px;
-    padding: 10px;
+    padding: 20px;
     margin: 50px;
+}
+
+.resetField{
+    padding: 10px;
+    /* position: relative; */
+    /* right: 0px; */
+    color: brown;
+    background-color: rgb(11, 172, 22);
+    /* width: 50px; */
+    /* left: 200px */
 }
