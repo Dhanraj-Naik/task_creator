@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Product from '../../components/Product'
 import './productList.css'
 
@@ -7,21 +7,33 @@ const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:8000/products")
     console.log("NORMAL", products)
+
+    // useEffect(() => {
+    //     fetch(url)
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log("RESPONSE:", data)
+    //             setProducts(data)
+    //         })
+    //         .catch(err => console.log(err))
+    // }, [url]);
+
+
+
+    const productFetch = useCallback(async () => {
+        const API = await fetch(url);
+        const response = await API.json();
+        setProducts(response)
+    }, [url])
+
+
     useEffect(() => {
+        productFetch()
+    }, [productFetch]);
 
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log("RESPONSE:", data)
-                setProducts(data)
-            })
-            .catch(err => console.log(err))
-    }, [url]);
-
-    useEffect(() => {
-        console.log("counter : ", counter)
-    }, [counter]);
+    // useEffect(() => {
+    //     console.log("counter : ", counter)
+    // }, [counter]);
 
 
     return (
