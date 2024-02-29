@@ -1,6 +1,6 @@
 import React from 'react'
 import MyImg from '../assets/smms.png'
-import  './header.css'
+import './header.css'
 export const Header = () => {
   return (
     <div>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './arrayState.css';
+import MyHeader from '../../components/MyHeader';
+import PersonList from '../../components/PersonList';
 
 const ArrayState = () => {
     const [tasks, setTask] = useState([{ id: 1, name: 'Dhanraj', married: true }, { id: 2, name: 'Vipul', married: false }, { id: 3, name: 'Yogesh', married: true }]);
@@ -14,21 +16,27 @@ const ArrayState = () => {
     }
 
     return (
-        <>
+        <div>
+            <MyHeader />
             <div className="App">
-                <h1 className="arrayCount">{'LIST'}</h1>
+
                 <button className="toggle" onClick={toggleHnndler}>TOGGLE</button>
-                <ul>
+                {/* <ul>
                     {show && tasks.map(task => (
                         (<li key={task.id} className={task.married ? 'married' : 'unmarried'}>
                             <span>{task.id} : {task.name}</span>
                             <button className='deleteTask' onClick={() => deleteTask(task.id)}>Delete</button>
                         </li>)
                     ))}
-                </ul>
+                </ul> */}
+                <PersonList
+                    tasks={tasks}
+                    show={show}
+                    deleteTask={deleteTask}
+                />
             </div>
 
-        </>
+        </div>
     )
 }
 
