@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-const AddTaskForm = () => {
+const AddTaskForm = ({addNewTask}) => {
 
     const [user, setUser] = useState("")
     const [married, setMarried] = useState(false)
@@ -27,7 +27,9 @@ const AddTaskForm = () => {
             married
         }
         console.log("hello ", personObject)
+        addNewTask(personObject)
         handleReset()
+
     }
 
 

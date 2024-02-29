@@ -24,33 +24,39 @@ const ArrayState = () => {
         setShow(!show)
     }
 
+    const addNewTask = (task) => {
+        setTask(prevTask => [...prevTask, task])
+    }
+
     return (
         <div>
             <MyHeader />
-            <div className="App">
-                <button style={myStyle} className="toggle" onClick={toggleHnndler}>TOGGLE</button>
-                <AddTaskForm />
-                <PersonList
-                    tasks={tasks}
-                    show={show}
-                    deleteTask={deleteTask}
-                />
-            </div>
+            <main>
+                <div className="App">
+                    <button style={myStyle} className="toggle" onClick={toggleHnndler}>TOGGLE</button>
+                    <AddTaskForm addNewTask={addNewTask} />
+                    <PersonList
+                        tasks={tasks}
+                        show={show}
+                        deleteTask={deleteTask}
+                    />
+                </div>
 
-            <BoxContainer className="success">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
-            </BoxContainer>
+                {/* <BoxContainer className="success">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
+                </BoxContainer>
 
-            <BoxContainer className="warning">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
-            </BoxContainer>
+                <BoxContainer className="warning">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
+                </BoxContainer>
 
-            <BoxContainer className="error">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
-            </BoxContainer>
+                <BoxContainer className="error">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, consectetur! Perferendis, exercitationem laudantium! Nam et dolorem amet illo cum repudiandae veritatis libero, nisi labore aut consectetur dolor. Dicta, blanditiis distinctio.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in a corrupti, doloribus, reprehenderit ipsam, minima blanditiis sit iste distinctio ea omnis soluta! Obcaecati at voluptates aliquam assumenda dicta odit.</p>
+                </BoxContainer> */}
+            </main>
             <Footer />
 
         </div>

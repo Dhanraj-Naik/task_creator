@@ -31,3 +31,8 @@ button {
 li{
     list-style: none; /* removed dot*/
 }
+
+.footer{
+    background-color: bisque;
+    padding: 20px;
+}
